@@ -71,8 +71,6 @@ The trained model is loaded into the controller at startup and used during each 
 ## Setup Instructions
 
 ## Prerequisites
-
-```bash
 sudo apt update
 sudo apt install mininet openvswitch-switch iperf python3-pip
 pip3 install ryu scikit-learn joblib matplotlib
@@ -85,14 +83,16 @@ Generating Traffic
 h3 iperf -s &
 h1 iperf -c h2 -u -b 25M -t 20
 During traffic generation, the controller dynamically classifies flows and assigns queues based on predicted traffic priority.
-Results and Observations
+
+## Results and Observations
 High-priority flows consistently achieve higher throughput
 QoS enforcement adapts dynamically to traffic behavior
 Hysteresis mechanism prevents frequent queue switching
 Stable controller behavior observed during extended runs
 No packet loss due to controller-driven flow updates
 Traffic analysis scripts can be used to generate throughput and queue-wise performance graphs.
-Future Work
+
+## Future Work
 Online learning and adaptive model updates
 Multi-switch and multi-path topology support
 Latency and jitter-aware classification
